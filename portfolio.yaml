@@ -286,31 +286,151 @@ projects:
     title: Cozy Words
     category: Shipped
     featured: true
-    draft: true               # hidden on the site until the walkthrough is ready (preview locally with ?drafts=1)
+    disciplines: [Level Design, Game Design]
     genre: "Word, Puzzle"
     platform: Play Store
-    engine: ""
-    year: ""
-    role_title: ""
+    engine: Unity
+    year: "2024"
+    role_title: "Level Designer and Game Designer"
     team: ""
     duration: ""
-    level_type: ""
-    image: ""
-    summary: "A relaxing word puzzle game where players form words to uncover hidden phrases."
+    level_type: "Phrase puzzle"
+    image: ""                 # TODO: cover image
+    summary: "A relaxing word puzzle where players reveal a hidden pop-culture phrase, with a hint shown above it, by making words from a grid of letters. Select tiles, make words, complete the objective, repeat."
+    card_summary: "A relaxing word puzzle where players reveal hidden pop-culture phrases."
+    tldr:
+      - label: The game
+        text: "A relaxing word puzzle where players reveal a hidden pop-culture phrase, with a hint shown above it, by making words from a grid of letters. Select tiles, make words, complete the objective, repeat."
+      - label: My role
+        text: "Level designer for all 120 levels, and co-designer of the game with my partner, who also developed it and designed the UI."
+      - label: Result
+        text: "5K+ downloads, 900+ reviews and a 4.8 rating on the Play Store."
+    scale:
+      - {value: "120", label: Levels}
+      - {value: "10", label: Phrase categories}
+      - {value: "2", label: People on the team}
+      - {value: "~6 mo", label: Development time}
     context: ""
     objectives: []
-    role:
-      - "Led the game design, level design and UX, crafting an experience focused on accessibility and fun for the players."
+    role: []
     level_map: {src: "", caption: ""}
     beats: []
-    decisions: []
-    iterations: []
+    media: []                 # TODO: gameplay clips (use tools/compress-video.ps1)
+    decisions:
+      - title: "A level is a handful of dials"
+        text: "Every level is a phrase and a hint, plus the settings that shape how it plays: the number of moves, the mystery tile requirement, the vowel ratio and any words planted in the grid. Phrases come from ten categories: pop culture, idioms, popular sayings, movies, games, monuments, TV shows, books, songs and history. I set all of it in a level tool in Unity."
+        media:
+          - {src: "images/cozy-words/level-tool.png", caption: "The level tool in Unity: phrase, moves, hint, mystery tile requirement (Word Slider Max), vowel ratio and the starting words planted in the grid (SMOKE and SHORE)"}
+      - title: "Teaching the game through the first 29 levels"
+        text: "The mystery tile is switched off for the first four levels, then arrives at level 5 with a requirement of 3 and climbs to 5, 6 and 7 over the following levels. The grid grows from 4x4 at level 1 to 5x5 at level 2, and to 6x6 at level 26, where the vowel ratio also rises from 0.42 to 0.46."
+    systems:
+      - title: "Mystery tile"
+        text: "A power-up players charge by playing well. Making a word with letters that are not in the phrase, or that are already revealed, fills a bar. When the bar reaches the level's requirement, the player can use the mystery tile to reveal the least repeated letter in the unfinished part of the phrase. Using it resets the bar."
+        points:
+          - "A word that does not help with the phrase still moves the player toward a reward."
+          - "The requirement (Word Slider Max) is part of each level's design. 0 means the mystery tile is not unlocked yet."
+      - title: "Vowel ratio and starting words"
+        text: "The grid is filled with random letters. The vowel ratio sets what share of them are vowels, so I can make a level easier or harder to play. I can also plant specific words in the grid to give players a head start."
+        points:
+          - "Ratios used so far: 0.40 on the 4x4 grid, 0.42 on 5x5 and 0.46 on 6x6."
+      - title: "Tile sounds"
+        text: "Each tile in a word plays the next note up on a marimba, so the word builds into a rising phrase. There is no randomness: I chose complementary pitches one after another, instead of a Do-Re-Mi scale, to feel more zen and gratifying."
+        points:
+          - "Layered with relaxed background and ambience tracks."
+    iterations:
+      - problem: "The HitApps test showed where players failed most and where they left. In my first 20 levels, 12 were flagged, with up to 294 fails on a single level."
+        change: "Reworked the whole set. I cut the worst performers, moved the hardest phrases later, and gave hard phrases more moves: Sherlock Holmes went from 10 to 20, and Best Served Cold from 10 to 20."
+        outcome: "Fail and churn rates improved, but a few levels still missed the audience, so I kept iterating."
+      - problem: "A hint can be right and still not click. Level 1 was Star Wars with the hint \"Galactic Saga\"."
+        change: "Rewrote it to \"George Lucas' Epic Space Saga\" and gave the level 500 moves so that nobody could fail it."
+        outcome: "Star Wars is famous, but the hint still was not an instant connection for a large share of the audience. In the live game, level 1 is Coca Cola with the hint \"Famous soda brand\"."
+      - problem: "Across the later levels, some phrases failed for three reasons: the hint was not good enough, the phrase did not suit the audience, or players did not recognise it."
+        change: "Cut them (these were planned for levels 47 to 97) and replaced them with phrases the audience already knows, such as Coca Cola, Minnie Mouse, Peter Parker and Mamma Mia."
+        outcome: "The live levels lean into what this audience knows best."
+        media:
+          - {src: "images/cozy-words/cut-levels.png", caption: "Some of the phrases cut after several rounds of review, with their planned level numbers"}
+    charts: []
+    tables:
+      - title: "Level 1 over three versions"
+        intro: "The same slot, rewritten after each round of testing."
+        columns: [Version, Phrase, Hint, Moves]
+        rows:
+          - ["First version", "Star Wars", "Galactic Saga", "-"]
+          - ["Second version", "Star Wars", "George Lucas' Epic Space Saga", "500, so players cannot fail"]
+          - ["Live game", "Coca Cola", "Famous soda brand", "13"]
+      - title: "The hardest levels in the first version"
+        intro: "Fails per level in the HitApps test, and where each phrase ended up in the next version of levels 1 to 20."
+        columns: [Phrase, Fails, "Level, first to second version"]
+        rows:
+          - ["Sherlock Holmes", "294", "7 → 15"]
+          - ["Bohemian Rhapsody", "288", "14 → Cut"]
+          - ["Community", "288", "20 → Cut"]
+          - ["Shake It Off", "171", "Stayed at 5"]
+          - ["Violets Are Blue", "170", "8 → 10"]
+          - ["Finding Dory", "151", "17 → 11"]
+          - ["Bon Appetit", "144", "9 → 13"]
+          - ["Mount Rushmore", "130", "6 → 20"]
+          - ["Buckingham Palace", "125", "19 → Cut"]
+          - ["Tears of the Kingdom", "85", "13 → Cut"]
+          - ["Au Revoir", "65", "16 → Cut"]
+          - ["John Wick", "55", "11 → 8"]
+        caption: "Red struck-through values are the first version. Green values are the second."
+        media_label: "View the original level sheets (first and second versions, levels 1 to 20)"
+        media:
+          - {src: "images/cozy-words/level-sheet-v1-01-10.png", caption: "First version, levels 1 to 10. Red cells mark the levels with the most fails"}
+          - {src: "images/cozy-words/level-sheet-v1-11-20.png", caption: "First version, levels 11 to 20"}
+          - {src: "images/cozy-words/level-sheet-v2-01-10.png", caption: "Second version, levels 1 to 10"}
+          - {src: "images/cozy-words/level-sheet-v2-11-20.png", caption: "Second version, levels 11 to 20"}
+      - title: "The first 29 live levels"
+        intro: "The settings of each level in the current game. A mystery tile value of 0 means it is not unlocked yet."
+        columns: [Level, Phrase, Moves, Hint, Mystery tile, Vowel ratio, Grid]
+        rows:
+          - ["1", "Coca Cola", "13", "Famous soda brand", "0", "0.40", "4x4"]
+          - ["2", "Minnie Mouse", "18", "Mickey Mouse's Sweetheart", "0", "0.42", "5x5"]
+          - ["3", "Peter Parker", "17", "Spider-Man's real name", "0", "0.42", "5x5"]
+          - ["4", "Mamma Mia", "12", "ABBA's movie musical", "0", "0.42", "5x5"]
+          - ["5", "Statue of Liberty", "23", "NYC harbor landmark", "3", "0.42", "5x5"]
+          - ["6", "Sesame Street", "18", "Elmo and Big Bird's street", "5", "0.42", "5x5"]
+          - ["7", "Violets Are Blue", "21", "Roses are red, ___", "5", "0.42", "5x5"]
+          - ["8", "Frank Sinatra", "18", "Singer of My Way", "5", "0.42", "5x5"]
+          - ["9", "Shake It Off", "15", "Taylor Swift hit song", "5", "0.42", "5x5"]
+          - ["10", "Laugh Out Loud", "17", "What LOL stands for", "5", "0.42", "5x5"]
+          - ["11", "Old Fashioned", "17", "Classic whiskey cocktail", "6", "0.42", "5x5"]
+          - ["12", "Sherlock Holmes", "20", "Famous fictional detective", "6", "0.42", "5x5"]
+          - ["13", "Bon Appetit", "14", "French for enjoy your meal", "6", "0.42", "5x5"]
+          - ["14", "Best Served Cold", "20", "Revenge is a dish...", "6", "0.42", "5x5"]
+          - ["15", "Goody Two Shoes", "18", "Someone who never breaks the rules", "6", "0.42", "5x5"]
+          - ["16", "La La Land", "11", "Modern movie musical set in LA", "6", "0.42", "5x5"]
+          - ["17", "In My Opinion", "15", "What IMO stands for", "6", "0.42", "5x5"]
+          - ["18", "Behind the Scenes", "20", "Unseen footage of a movie set", "6", "0.42", "5x5"]
+          - ["19", "Mount Rushmore", "17", "Monument of four U.S. presidents", "6", "0.42", "5x5"]
+          - ["20", "High School Musical", "22", "Zac Efron Disney movie", "6", "0.42", "5x5"]
+          - ["21", "Under the Weather", "20", "Feeling sick or unwell", "7", "0.42", "5x5"]
+          - ["22", "Wheel of Fortune", "18", "Popular TV word puzzle show", "7", "0.42", "5x5"]
+          - ["23", "Wednesday Addams", "19", "Addams Family's deadpan daughter", "7", "0.42", "5x5"]
+          - ["24", "Julia Roberts", "15", "Pretty Woman's leading lady", "7", "0.42", "5x5"]
+          - ["25", "Shaking My Head", "16", "What SMH stands for", "7", "0.42", "5x5"]
+          - ["26", "The Golden Girls", "17", "Betty White's iconic 80s sitcom", "7", "0.46", "6x6"]
+          - ["27", "Chandler Bing", "15", "Friends' sarcastic one", "7", "0.46", "6x6"]
+          - ["28", "Buckingham Palace", "20", "Home of British royals", "7", "0.46", "6x6"]
+          - ["29", "Buzz Lightyear", "16", "To infinity and beyond", "7", "0.46", "6x6"]
+        media_label: "View the original live level sheets"
+        media:
+          - {src: "images/cozy-words/live-levels-01-14.png", caption: "Live levels 1 to 14"}
+          - {src: "images/cozy-words/live-levels-15-29.png", caption: "Live levels 15 to 29"}
     before_after: []
-    media: []
-    tools: []
+    tools:
+      - {name: Unity, why: "Built a level tool to set each level's phrase, hint, moves, mystery tile requirement, vowel ratio and starting words."}
+      - {name: Spreadsheets, why: "Kept every phrase, hint and move count on sheets, and used the test's fail counts to decide what to keep, move or cut."}
+      - {name: Audacity, why: "Cut the marimba notes for the tile sounds and layered the background and ambience tracks."}
+    kpis:
+      - {value: "5K+", label: Downloads}
+      - {value: "900+", label: Reviews}
+      - {value: "4.8", label: Average rating}
     results:
-      - "Tested the game with HitApps in the US market, with test results of $1 CPI, 32% D1 retention and 5% D7 retention."
-    links: []
+      - "Tested with HitApps in the US market: $1 CPI, 32% D1 retention and 5% D7 retention. The test's analytics showed where players failed and left, which drove the level rebuild."
+    links:
+      - {label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.NearMint.CozyWords"}
 
   - id: cubos-confines
     title: "Cubo's Confines"

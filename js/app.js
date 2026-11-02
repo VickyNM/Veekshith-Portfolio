@@ -328,7 +328,7 @@ function tableBlock(spec) {
         const text = String(cell);
         const td = make("td", i === 0 ? "row-head" : "");
         td.dataset.label = columns[i] || "";
-        const change = text.match(/^(.*?):?\s*([\d.,$%]+)\s*→\s*([\d.,$%]+)\s*$/);
+        const change = text.match(/^(.*?):?\s*([\d.,$%]+)\s*→\s*([\d.,$%]+|Cut)\s*$/);
         if (change && i > 0) {
           // "Name: 40 → 20" becomes name, old value (red, struck through), arrow, new value (green, bold)
           td.classList.add("changed");
