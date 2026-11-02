@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume</title>
+  <meta name="description" content="Game and level designer. Case studies on mobile puzzle and arcade games: level design, game systems and balancing.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="resume">
+  <header class="hero hero-small">
+    <div class="wrap">
+      <nav class="nav" aria-label="Main">
+        <a class="brand" href="index.html" id="brand"></a>
+        <div class="nav-links">
+          <a href="index.html#work">Work</a>
+          <a href="resume.html" aria-current="page">Resume</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+      <p class="eyebrow" id="headline"></p>
+      <h1 id="name"></h1>
+      <p class="focus" id="focus"></p>
+      <div class="hero-actions">
+        <a class="btn btn-light" id="resume-link" href="#" hidden>Download CV (PDF)</a>
+      </div>
+    </div>
+  </header>
+  <div class="stripe"></div>
+
+  <main class="wrap resume">
+    <section class="section">
+      <h2 class="section-title"><span>Summary</span></h2>
+      <p class="lead" id="summary"></p>
+    </section>
+
+    <div class="resume-cols">
+      <div>
+        <section class="section">
+          <h2 class="section-title"><span>Shipped titles</span></h2>
+          <ul class="shipped" id="shipped-list"></ul>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span>Experience</span></h2>
+          <div id="experience-list"></div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title"><span>Education</span></h2>
+          <div id="education-list"></div>
+        </section>
+      </div>
+
+      <aside>
+        <section class="section">
+          <h2 class="section-title"><span>Areas of expertise</span></h2>
+          <ul class="plain" id="expertise-names"></ul>
+        </section>
+        <section class="section">
+          <h2 class="section-title"><span>Tools</span></h2>
+          <div id="tools-list"></div>
+        </section>
+        <section class="section">
+          <h2 class="section-title"><span>Languages</span></h2>
+          <div class="chips" id="languages-list"></div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="wrap">
+      <h2>Let's work together</h2>
+      <p class="footer-sub" id="footer-sub"></p>
+      <div class="hero-actions" id="contact-links"></div>
+      <p class="copy"><span id="copy"></span> <span id="updated"></span></p>
+    </div>
+  </footer>
+
+  <div class="error" id="error" hidden></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

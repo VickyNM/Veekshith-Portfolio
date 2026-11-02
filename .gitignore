@@ -1,0 +1,9 @@
+﻿# Local backups of earlier stylesheets
+*-backup
+*.backup
+
+# Python and editor leftovers
+__pycache__/
+*.pyc
+.vscode/
+.claude/

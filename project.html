@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project</title>
+  <meta name="description" content="Game and level designer. Case studies on mobile puzzle and arcade games: level design, game systems and balancing.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="project">
+  <header class="hero hero-small">
+    <div class="wrap">
+      <nav class="nav" aria-label="Main">
+        <a class="brand" href="index.html" id="brand"></a>
+        <div class="nav-links">
+          <a href="index.html#work">&larr; All work</a>
+          <a href="resume.html">Resume</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+      <p class="eyebrow" id="p-meta"></p>
+      <h1 id="p-title"></h1>
+      <div class="badges" id="p-badges"></div>
+      <div class="hero-actions" id="p-hero-links" hidden></div>
+    </div>
+  </header>
+  <div class="stripe"></div>
+  <nav class="subnav" id="subnav" aria-label="On this page" hidden></nav>
+
+  <main class="wrap">
+    <div class="cover" id="p-cover"></div>
+
+    <section class="tldr-section" id="p-tldr-section" hidden>
+      <div class="tldr" id="p-tldr"></div>
+    </section>
+
+    <section class="section" id="p-overview" data-nav="Overview">
+      <h2 class="section-title"><span>Overview</span></h2>
+      <p class="lead" id="p-summary"></p>
+      <div class="stats stats-light" id="p-scale" hidden></div>
+      <dl class="facts" id="p-facts"></dl>
+      <div class="overview-cols">
+        <div id="p-context-box" hidden>
+          <h3 class="subhead">Context</h3>
+          <p id="p-context"></p>
+        </div>
+        <div id="p-objectives-box" hidden>
+          <h3 class="subhead">Design goals</h3>
+          <ul class="bullets" id="p-objectives"></ul>
+        </div>
+        <div id="p-role-box" hidden>
+          <h3 class="subhead">My role</h3>
+          <ul class="bullets" id="p-role"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="p-map-section" data-nav="Level map" hidden>
+      <h2 class="section-title"><span>Level map</span></h2>
+      <div id="p-map"></div>
+    </section>
+
+    <section class="section" id="p-media-section" data-nav="Gameplay" hidden>
+      <h2 class="section-title"><span>Gameplay</span></h2>
+      <div class="media-grid" id="p-media"></div>
+    </section>
+
+    <section class="section" id="p-beats-section" data-nav="Level breakdown" hidden>
+      <h2 class="section-title"><span>Beat by beat</span></h2>
+      <ol class="steps" id="p-beats"></ol>
+    </section>
+
+    <section class="section" id="p-decisions-section" data-nav="Level design" hidden>
+      <h2 class="section-title"><span>Level design and decisions</span></h2>
+      <div class="steps-plain" id="p-decisions"></div>
+    </section>
+
+    <section class="section" id="p-charts-section" data-nav="Difficulty" hidden>
+      <h2 class="section-title"><span>Difficulty curve</span></h2>
+      <div id="p-charts"></div>
+    </section>
+
+    <section class="section" id="p-systems-section" data-nav="Systems" hidden>
+      <h2 class="section-title"><span>Game design systems</span></h2>
+      <div class="systems" id="p-systems"></div>
+    </section>
+
+    <section class="section" id="p-iterations-section" data-nav="Iteration" hidden>
+      <h2 class="section-title"><span>Problems, iteration and feedback</span></h2>
+      <div id="p-iterations"></div>
+    </section>
+
+    <section class="section" id="p-tables-section" data-nav="Balancing" hidden>
+      <div id="p-tables"></div>
+    </section>
+
+    <section class="section" id="p-ba-section" data-nav="Before and after" hidden>
+      <h2 class="section-title"><span>Before and after</span></h2>
+      <div id="p-ba"></div>
+    </section>
+
+    <section class="section" id="p-results-section" data-nav="Results" hidden>
+      <h2 class="section-title"><span>Results</span></h2>
+      <div class="stats stats-light" id="p-kpis" hidden></div>
+      <ul class="bullets" id="p-results"></ul>
+    </section>
+
+    <section class="section" id="p-tools-section" data-nav="Tools" hidden>
+      <h2 class="section-title"><span>Tools and why</span></h2>
+      <dl class="tool-why" id="p-tools"></dl>
+    </section>
+
+
+    <section class="section" id="p-sibling-section">
+      <div class="pager" id="p-pager"></div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="wrap">
+      <h2>Let's work together</h2>
+      <p class="footer-sub" id="footer-sub"></p>
+      <div class="hero-actions" id="contact-links"></div>
+      <p class="copy"><span id="copy"></span> <span id="updated"></span></p>
+    </div>
+  </footer>
+
+  <div class="error" id="error" hidden></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,522 @@
+# ============================================================
+#  PORTFOLIO CONTENT - edit this file, then refresh the browser.
+#  Pages: index.html (home), resume.html, project.html?id=...
+#  Tips:
+#    - Wrap text in "quotes" if it contains a colon (:) or starts with a symbol.
+#    - Use spaces, not tabs, for indentation.
+#    - Leave a field as "" or [] (or delete it) to hide it on the site.
+#    - Each project needs a unique `id` (lowercase, dashes): project.html?id=cozy-words
+#
+#  Built around the GDC 2026 talk "Designing the Ideal Level Design Portfolio":
+#    - Order of projects = order of presentation. Strongest first, balanced flow,
+#      impactful ending. Projects with `featured: true` form "Selected work" on the
+#      home page; the rest appear under "More work".
+#    - Clarity beats quantity: fully explain a few projects rather than listing many.
+#    - Every project page is a walkthrough: overview, level map, beats, decisions,
+#      iteration and feedback, before/after, GIFs/video, tools and why.
+#    - It is a living document: change `site.updated` whenever you edit it.
+# ============================================================
+
+site:
+  title: "Veekshith Kolanupaka | Game & Level Designer"   # browser tab title
+  name: Veekshith Kolanupaka
+  headline: "Game Designer / Level Designer"   # immediate signal of focus
+  focus: "Mobile puzzle and arcade games"      # one short line under the headline
+  tagline: "I design puzzle and arcade levels for mobile, built around clarity, fun and data."
+  location: Hyderabad, India
+  email: veekshith02kolanupaka@gmail.com
+  updated: "November 2026"                     # shown in the footer as "Last updated"
+  website:
+    label: www.nearmintstudios.com
+    url: https://www.nearmintstudios.com/
+  resume_pdf: ""          # e.g. "Veekshith_Kolanupaka_CV.pdf" once the file is copied into this folder
+  socials: []             # TODO: add links, for example:
+  #  - label: LinkedIn
+  #    url: https://www.linkedin.com/in/your-name
+  #  - label: Itch.io
+  #    url: https://your-name.itch.io
+
+about:
+  summary: "Game Designer with 3+ years of experience shipping puzzle and arcade games on mobile. Built 15+ games for clients like PlayOn and JustPlay, and tested prototypes with Voodoo and HitApps, iterating on CPI and retention data. Skilled in game mechanics, level design, FTUE and KPI-driven iteration."
+  stats:                  # credibility strip on the home page; delete the list to hide
+    - value: "3+"
+      label: Years experience
+    - value: "15+"
+      label: Client games built
+    - value: "3"
+      label: Play Store releases
+
+# Clear areas of expertise (shown on the home page and the resume page)
+expertise:
+  - name: Level Design
+    text: "Puzzle and arcade levels that introduce, reinforce and then twist a mechanic."
+  - name: Game Design
+    text: "Core mechanics, game flow, upgrade progression and feedback loops."
+  - name: FTUE Design
+    text: "First-time experiences that teach through play instead of text."
+  - name: KPI-driven Iteration
+    text: "Tuning games against CPI, retention and playtime from publisher tests."
+  - name: Prototyping
+    text: "Fast playable builds to test an idea before committing to it."
+  - name: Design Documentation
+    text: "Clear design docs and briefs that a team can build from."
+
+# Tools grouped by purpose. Add `why` lines on each project page for "tools used and why".
+tools:
+  - group: Engines
+    items: [Unity]
+  - group: Design and documentation
+    items: [Figma]
+
+experience:
+  - company: Nearmint Studios
+    role: Game Designer
+    dates: "Feb 2024 – Present"
+    highlights:
+      - "Designed and shipped puzzle and arcade games on the Play Store, and tested prototypes with Voodoo and HitApps."
+      - "Built 15+ games for clients like PlayOn (Papaya Stars) and JustPlay (Gimica Games), handling everything from brief to launch. Earned repeated engagement from clients."
+  - company: AltWorld
+    role: Game Design Intern
+    dates: "Jul 2023 – Jan 2024"
+    highlights:
+      - "Designed multiple mini-games (Red Light/Green Light, Racing Fury, Obby)."
+      - "Conceptualized and implemented a Fishing mini-game inspired by Animal Crossing."
+      - "Co-designed a Fetch & Deliver quest system to improve user retention."
+      - "Managed a team of 3 junior designers for feature implementation and polish."
+      - "Contributed to a product with 1M+ downloads."
+
+# ------------------------------------------------------------
+#  PROJECTS  (order here = order on the site)
+#
+#  draft: true hides a project everywhere on the site (home, project page, menus) so unfinished
+#         work is not public. Remove the line when it is ready. To preview drafts locally, add
+#         ?drafts=1 to the address, for example http://localhost:8000/?drafts=1
+#
+#  Basics (used on cards):
+#    category: Shipped | Game Jam | Personal | Client
+#    engine / platform: shown as badges on the card, e.g. engine: Unity, platform: Play Store
+#    image: cover screenshot or GIF, e.g. "images/crash-attack/cover.png"
+#
+#  Walkthrough (every field is optional; empty ones are hidden):
+#    role_title, team, duration, year, level_type
+#    context: why the project existed
+#    objectives: [design goals]
+#    role: [what you personally did]
+#    level_map: {src: "images/x/map.png", caption: "..."}
+#    beats:       [{title, text, media: [{src, caption}]}]        the level, beat by beat
+#    decisions:   [{title, text, media: [{src, caption}]}]        design choices and why
+#    iterations:  [{problem, change, outcome, media: [...]}]      problem-solving + feedback
+#    before_after:[{label, before, after, caption}]               image paths
+#    tools:       [{name, why}]
+#    media: GIFs, videos, screenshots. A src can be an image, an .mp4/.webm file, or a YouTube link.
+#           Short clips: use .mp4 with `loop: true`. It plays silently on a loop like a GIF, but is
+#           about 10x smaller, only downloads when it scrolls into view, and pauses when it leaves.
+#           Optional `poster: images/x/frame.jpg` shows a still frame while the clip loads.
+#           Keep each clip under about 1 MB: 3 to 8 seconds, 720 px wide at most, no audio track.
+#    results: [measurable outcomes and player/publisher feedback]
+#    links: [{label, url}]
+# ------------------------------------------------------------
+projects:
+  - id: crash-attack
+    title: Crash Attack
+    category: Shipped
+    featured: true
+    disciplines: [Game Design, Level Design]
+    genre: Arcade
+    platform: Play Store
+    engine: Unity
+    year: "2025"
+    role_title: "Game Designer and Level Designer"
+    team: ""                  # shown as a tile in the overview row instead
+    duration: ""
+    level_type: "Ball breaker"
+    image: "images/crash-attack/cover.png"
+    summary: "A fast-paced, chaotic brick-breaker game where players aim to break blocks, dig deeper, and utilize math gates to multiply their balls. Players must manage limited moves, and upgrade abilities using upgrade cards to overcome challenging levels."
+    card_summary: "A fast-paced, chaotic brick-breaker with math gates and upgrade cards."   # short version for the home page card
+    tldr:
+      - label: The game
+        text: "A fast-paced, chaotic brick-breaker game where players aim to break blocks, dig deeper, and utilize math gates to multiply their balls. Players must manage limited moves, and upgrade abilities using upgrade cards to overcome challenging levels."
+      - label: My role
+        text: "Game and level designer. I built all 80 levels and the challenge system, and co-designed upgrades and combos."
+      - label: Result
+        text: "Tested with Voodoo ($1.65 CPI, 30% D1, 10% D7) and notified as a hot prototype."
+    scale:
+      - {value: "80", label: Handcrafted levels}
+      - {value: "14", label: Unique obstacles}
+      - {value: "2", label: People on the team}
+      - {value: "~6 mo", label: Development time}
+    context: ""               # TODO: why the project existed
+    objectives:
+      - "Maximise player fun across every level."
+      - "Give players goals beyond just beating a level."
+    role: []                  # ownership is shown on each level and system card instead
+    level_map: {src: "", caption: ""}
+    media:                    # shown as "Gameplay"
+      - {src: "images/crash-attack/gameplay-1.mp4", poster: "images/crash-attack/gameplay-1-poster.jpg", caption: "Math gates (+3 and x4), bomb blocks and a rising combo", loop: true}
+      - {src: "images/crash-attack/gameplay-2.mp4", poster: "images/crash-attack/gameplay-2-poster.jpg", caption: "Another level: +3 and x3 gates, and a bomb blast pushing the combo from 3x to 9x", loop: true}
+    beats: []
+    decisions:                # shown as "Level design and decisions"
+      - title: "80 levels from modular sections"
+        text: "I made small mini-layout sections while building the levels, then mixed and matched them to create unique flows and a chaotic feel. The levels use 14 unique obstacles. A further 80 mirrored versions of the original levels added more gameplay time."
+        media:
+          - {src: "images/crash-attack/mini-sections.png", caption: "A few of the mini-layout sections"}
+          - {src: "images/crash-attack/level-layout-a.png", caption: "Level 2 in full (scroll to see the whole level)", tall: true}
+          - {src: "images/crash-attack/level-layout-b.png", caption: "Level 35 in full (scroll)", tall: true}
+      - title: "Block health that grows as you dive"
+        text: "Each level sets a minimum and maximum block health, and every block picks a random value between the two when it spawns. As the player breaks blocks and moves down the level, health rises: after every set distance down (the offset), it goes up by a set amount (the modifier). Both settings change level by level, from +2 every 9 units of depth at level 1 to +8 every 3 at level 80."
+      - title: "Math gates"
+        text: "Two types, multipliers and adders, a mechanic popularised by games like Mob Control. They add another layer of chaos and juice to each level."
+        media: []             # TODO: GIF of the gates
+    systems:
+      - title: "Challenges"
+        text: "A meta system that gives players goals beyond beating the level, rewarding in-game currency. Every level has three challenges drawn from eight types, and each challenge is specific to its level."
+        points:
+          - "Drafted the values on a sheet, then rebalanced them after internal testing (see the balancing table below)."
+      - title: "Permanent upgrades"
+        text: "Players spend in-game currency to permanently upgrade ball damage, ball count, crit chance and more."
+        points:
+          - "I owned what came next in the skill tree and the cost of each next upgrade."
+      - title: "In-level upgrade cards"
+        text: "A card appears after every X blocks broken. After each claim the requirement rises by Y and the counter resets."
+        points:
+          - "Standard rarities spawn at 60% Uncommon, 35% Rare and 5% Legendary. Mythic cards are added to the pool as the player progresses through the levels."
+          - "Each upgrade has its own value, spawn probability, and a pick limit that depends on its rarity."
+          - "All values are tuned in the Unity inspector."
+        media_label: "View the Unity inspector screenshots"
+        media:
+          - {src: "images/crash-attack/cards-rarity.png", caption: "Rarity spawn chances in the Unity inspector"}
+          - {src: "images/crash-attack/cards-upgrades.png", caption: "Upgrade entries: type, rarity, pick limit, value and probability"}
+      - title: "Combo system"
+        text: "The more blocks you break, the higher your combo climbs. The combo breaks when the balls return without breaking a single block in a turn."
+        points:
+          - "I balanced the combo rewards."
+    iterations:
+      - problem: "In early playtests the balls kept bouncing from side to side without coming back, so turns dragged on."
+        change: "Limited the number of collisions a ball can have without hitting a block to 6. An invisible counter resets whenever the ball hits a block. The ball turns redder as it nears the limit, then returns to the top of the screen once fully red."
+        outcome: "Turn times improved, and testers understood the red ball without being told."
+        media:
+          - {src: "images/crash-attack/ball-red.mp4", poster: "images/crash-attack/ball-red-poster.jpg", caption: "The ball turns redder as it nears the collision limit, then returns to the top", loop: true}
+      - problem: "Internal testing showed some challenges were too easy and others too hard to finish in a single try."
+        change: "Went back to the sheet and rebalanced the target value of each challenge, level by level. I replayed the same levels many times, watched the average flow of a run, and set each value to what was realistically achievable."
+        outcome: "Players could finish all of a level's challenges in one go, which made the game more satisfying."
+    charts:
+      - title: "Block health across the 80 levels"
+        intro: "How the starting block health climbs from level 1 to level 80. The shaded band runs from the weakest to the strongest block a level can start with. The numbered dots mark the levels where a new mythic card is added to the card pool."
+        marker_note: "New mythic card"
+        y_label: "Block health"
+        x_label: "Level"
+        min: [1,1,2,2,2,5,5,5,7,7,7,7,7,7,7,8,8,8,8,9, 9,10,10,10,10,11,11,11,11,14,14,14,14,16,16,16,16,16,18,18, 18,20,20,20,20,22,22,24,24,24,26,26,26,28,28,30,30,30,32,32, 32,32,32,32,34,34,34,36,36,36,38,38,38,38,40,40,40,40,42,42]
+        max: [4,6,6,6,6,9,9,9,11,11,11,11,12,12,12,12,12,12,12,13, 13,14,14,14,14,16,16,16,16,18,18,18,18,20,20,20,20,20,22,22, 22,24,24,24,26,26,26,26,28,30,30,30,32,32,34,34,34,36,36,36, 38,38,38,38,40,40,40,40,40,42,42,42,42,42,46,46,46,46,46,46]
+        markers:
+          - {level: 3, label: "Infinite Paddle"}
+          - {level: 7, label: "Midas Touch"}
+          - {level: 12, label: "Ball Training"}
+          - {level: 18, label: "Bomb Training"}
+          - {level: 24, label: "Damage Training"}
+        caption: ""
+        media_label: "View the full level table (levels 1 to 80)"
+        media:
+          - {src: "images/crash-attack/level-table-01-20.png", caption: "Levels 1 to 20: depth, block health, health offset, health modifier and feature unlocks"}
+          - {src: "images/crash-attack/level-table-21-40.png", caption: "Levels 21 to 40"}
+          - {src: "images/crash-attack/level-table-41-60.png", caption: "Levels 41 to 60"}
+          - {src: "images/crash-attack/level-table-61-80.png", caption: "Levels 61 to 80"}
+    tables:
+      - title: "Balancing the challenge system"
+        intro: "First draft versus the version after internal testing, shown for levels 1 to 10 of 80. Highlighted cells changed. Each level has three challenges drawn from eight types."
+        columns: [Level, Challenge 1, Challenge 2, Challenge 3]
+        rows:
+          - ["1", "Number of Blocks: 10", "Percentage of Depth: 5", "Reach Combo: 5"]
+          - ["2", "Complete Level In Under Balls: 40 → 20", "Destroy Bombs: 6", "Percentage of Depth: 70 → 30"]
+          - ["3", "Duplicate Balls: 45 → 25", "Reach Combo: 35 → 15", "Number of Blocks: 60 → 20"]
+          - ["4", "No. of Balls Shot: 20 → 8", "Destroy Blocks With Bombs: 15 → 5", "Percentage of Depth: 80 → 50"]
+          - ["5", "Destroy Bombs: 10 → 5", "Complete Level In Under Balls: 40 → 20", "Reach Combo: 50 → 20"]
+          - ["6", "No. of Balls Shot: 25 → 5", "Number of Blocks: 60 → 15", "Duplicate Balls: 65 → 30"]
+          - ["7", "Percentage of Depth: 75 → 60", "Destroy Blocks With Bombs: 15 → 5", "Reach Combo: 45 → 15"]
+          - ["8", "Number of Blocks: 55 → 20", "No. of Balls Shot: 20 → 8", "Destroy Blocks With Bombs: 10 → 3"]
+          - ["9", "Complete Level In Under Balls: 30 → 25", "Duplicate Balls: 60 → 40", "Destroy Bombs: 12 → 6"]
+          - ["10", "No. of Balls Shot: 20 → 6", "Percentage of Depth: 50 → 75", "Destroy Blocks With Bombs: 15 → 5"]
+        caption: "Red struck-through values were the first draft. Green values are what shipped after rebalancing."
+        media_label: "View the original sheets (levels 1 to 25)"
+        media:
+          - {src: "images/crash-attack/challenges-before.png", caption: "First draft (levels 1 to 25)"}
+          - {src: "images/crash-attack/challenges-after.png", caption: "After rebalancing (levels 1 to 25)"}
+    before_after: []
+    tools:
+      - {name: Unity, why: "Built the game and tuned the card rarity and upgrade values directly in the inspector."}
+      - {name: Spreadsheets, why: "Drafted the challenge values for each level, then rebalanced them after internal testing."}
+    kpis:
+      - {value: "$1.65", label: CPI, note: "Voodoo test, 80 levels"}
+      - {value: "30%", label: D1 retention}
+      - {value: "10%", label: D7 retention}
+      - {value: "30 min", label: Daily playtime}
+    results: []               # the Voodoo result is already in the summary strip and tiles
+    links:
+      - {label: "Play Store", url: "https://play.google.com/store/apps/details?id=com.NearMintStudios.CrashAttack&hl=en_IN"}
+  - id: ice-cream-connect
+    title: Ice Cream Connect
+    category: Shipped
+    featured: true
+    draft: true               # hidden on the site until the walkthrough is ready (preview locally with ?drafts=1)
+    genre: Puzzle
+    platform: Play Store
+    engine: ""
+    year: ""
+    role_title: ""
+    team: ""
+    duration: ""
+    level_type: ""
+    image: ""
+    summary: "A vibrant connect-the-dots puzzle game where players fulfill orders by linking similar dots."
+    context: ""
+    objectives: []
+    role:
+      - "Handled the game and level design, UI/UX flow, and created all the in-game art assets."
+    level_map: {src: "", caption: ""}
+    beats: []
+    decisions: []
+    iterations: []
+    before_after: []
+    media: []
+    tools: []
+    results:
+      - "Voodoo approached us to offer their Voodoo Academy Program."
+    links: []
+
+  - id: cozy-words
+    title: Cozy Words
+    category: Shipped
+    featured: true
+    draft: true               # hidden on the site until the walkthrough is ready (preview locally with ?drafts=1)
+    genre: "Word, Puzzle"
+    platform: Play Store
+    engine: ""
+    year: ""
+    role_title: ""
+    team: ""
+    duration: ""
+    level_type: ""
+    image: ""
+    summary: "A relaxing word puzzle game where players form words to uncover hidden phrases."
+    context: ""
+    objectives: []
+    role:
+      - "Led the game design, level design and UX, crafting an experience focused on accessibility and fun for the players."
+    level_map: {src: "", caption: ""}
+    beats: []
+    decisions: []
+    iterations: []
+    before_after: []
+    media: []
+    tools: []
+    results:
+      - "Tested the game with HitApps in the US market, with test results of $1 CPI, 32% D1 retention and 5% D7 retention."
+    links: []
+
+  - id: cubos-confines
+    title: "Cubo's Confines"
+    category: Game Jam
+    featured: true
+    draft: true               # hidden on the site until the walkthrough is ready (preview locally with ?drafts=1)
+    genre: Puzzle Platformer
+    platform: Itch.io
+    engine: ""
+    year: "2024"
+    role_title: ""
+    team: ""
+    duration: ""
+    level_type: "2.5D puzzle platformer"
+    image: ""
+    summary: "An indie 2.5D puzzle-platformer with intricate level design and mind-bending puzzles, made during Do You Wanna Jam? 2024."
+    context: ""
+    objectives: []
+    role:
+      - "Designed unique puzzle mechanics featuring 'level-within-a-level' transitions, creating a cocoon-like gameplay structure."
+    level_map: {src: "", caption: ""}
+    beats: []
+    decisions: []
+    iterations: []
+    before_after: []
+    media: []
+    tools: []
+    results: []
+    links: []
+
+  - id: crossword-swap
+    title: Crossword Swap
+    category: Shipped
+    featured: true
+    draft: true               # hidden on the site until the walkthrough is ready (preview locally with ?drafts=1)
+    genre: "Word, Puzzle"
+    platform: ""
+    engine: ""
+    year: ""
+    role_title: ""
+    team: ""
+    duration: ""
+    level_type: ""
+    image: ""
+    summary: "A reimagined crossword puzzle game where the tiles are jumbled on the grid and players swap them into the correct places. A relaxing, zen experience."
+    context: ""
+    objectives: []
+    role: []
+    level_map: {src: "", caption: ""}
+    beats: []
+    decisions: []
+    iterations: []
+    before_after: []
+    media: []
+    tools: []
+    results: []
+    links: []
+
+  - id: cyber-spin
+    title: Cyber Spin
+    category: Personal
+    featured: true
+    draft: true               # hidden on the site until the walkthrough is ready (preview locally with ?drafts=1)
+    genre: Platformer
+    platform: ""
+    engine: ""
+    year: "2022"
+    role_title: ""
+    team: ""
+    duration: ""
+    level_type: Platformer
+    image: ""
+    summary: "A platformer built around levels that introduce and reinforce its core mechanics."
+    context: ""
+    objectives: []
+    role:
+      - "Designed levels to introduce and reinforce core mechanics through intuitive level design."
+      - "Contributed to mechanic balancing and overall gameplay flow for smoother player progression."
+    level_map: {src: "", caption: ""}
+    beats: []
+    decisions: []
+    iterations: []
+    before_after: []
+    media: []
+    tools: []
+    results:
+      - "Showcased at IGDC 2022, receiving positive feedback for design clarity and visual style."
+    links: []
+
+  - id: parasocial
+    title: Parasocial
+    category: Game Jam
+    featured: false
+    draft: true               # hidden on the site until the walkthrough is ready (preview locally with ?drafts=1)
+    genre: "Sokoban, Puzzle"
+    platform: Itch.io
+    engine: ""
+    year: "2024"
+    role_title: ""
+    team: ""
+    duration: ""
+    level_type: "Sokoban puzzle"
+    image: ""
+    summary: "A Sokoban-style puzzle game made during the WTFxIGDC Game Jam 2024."
+    context: ""
+    objectives: []
+    role:
+      - "Designed the core mechanics and crafted challenging puzzles."
+    level_map: {src: "", caption: ""}
+    beats: []
+    decisions: []
+    iterations: []
+    before_after: []
+    media: []
+    tools: []
+    results: []
+    links: []
+
+  - id: lost-in-the-woods
+    title: Lost In The Woods
+    category: Personal
+    featured: false
+    draft: true               # hidden on the site until the walkthrough is ready (preview locally with ?drafts=1)
+    genre: Horror
+    platform: ""
+    engine: ""
+    year: ""
+    role_title: ""
+    team: ""
+    duration: ""
+    level_type: "Exploration"
+    image: ""
+    summary: "A horror exploration game with light combat."
+    context: ""
+    objectives: []
+    role:
+      - "Designed the game's FTUE, easing players into mechanics through environmental cues and smart pacing."
+      - "Developed tense exploration and light combat systems to balance narrative immersion with interactivity."
+      - "Handled UI design and programming."
+    level_map: {src: "", caption: ""}
+    beats: []
+    decisions: []
+    iterations: []
+    before_after: []
+    media: []
+    tools: []
+    results: []
+    links: []
+
+  - id: client-projects
+    title: Client Projects
+    category: Client
+    featured: false
+    draft: true               # hidden on the site until the walkthrough is ready (preview locally with ?drafts=1)
+    genre: ""
+    platform: ""
+    engine: ""
+    year: ""
+    role_title: ""
+    team: ""
+    duration: ""
+    level_type: ""
+    image: ""
+    summary: "Built 15+ games for clients like PlayOn (Papaya Stars) and JustPlay (Gimica Games), handling everything from brief to launch. Earned repeated engagement from clients."
+    context: ""
+    objectives: []
+    role: []
+    level_map: {src: "", caption: ""}
+    beats: []
+    decisions: []
+    iterations: []
+    before_after: []
+    media: []
+    tools: []
+    results: []
+    links: []
+
+education:
+  - degree: "BSc(Hons), Computer Science and Game Development"
+    institution: Backstage Pass Institute of Game and Technology
+    dates: "Jun 2019 – Jul 2023"
+    note: "Relevant coursework in Game Design and Development."
+
+languages:
+  - English
+  - Hindi
+  - Telugu
+
+# Colours (any CSS colour). Notion palette: warm near-black text, white page, light gray panels, Notion blue accents.
+theme:
+  primary: "#0B6E99"      # links, chart, focus rings
+  accent: "#D3E5EF"       # light blue tag background
+  chip: "#F1F1EF"         # gray chips
+  ink: "#37352F"          # text
+  background: "#FFFFFF"   # page
+  soft: "#F7F6F3"         # panels, header, footer
+  muted: "#6F6E69"        # secondary text (slightly darker than Notion gray for small-text contrast)
+  rule: "#E9E9E7"         # borders
+
+# Dark mode colours (Notion dark). Used when the visitor picks dark mode or their system is set to dark.
+theme_dark:
+  primary: "#529CCA"
+  accent: "#28456C"
+  chip: "#2B2B2B"
+  ink: "#E6E6E5"
+  background: "#191919"
+  soft: "#202020"
+  muted: "#9B9A97"
+  rule: "#2F2F2F"
